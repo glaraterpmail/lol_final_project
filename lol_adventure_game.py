@@ -9,7 +9,10 @@ class Character():
 
     def appearance():
     
-    def pick_weapon():
+    def pick_weapon(self, weapon):
+        if weapon not in ["sword", "magic"]:
+            raise ValueError(""Invalid weapon! Please choose either "sword" or /
+                             "magic"."")
 
 class Shop(Character):
     def __init__():
