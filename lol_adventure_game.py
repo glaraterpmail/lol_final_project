@@ -8,6 +8,12 @@ class Character():
     def __repr__():
 
     def appearance():
+        clothing_options = ["hat", "shirt", "pants", "shoes"]
+        self.hair_color = input("Enter your hair color: ")
+        self.eye_color = input("Enter your eye color: ")
+        print("Available clothing options: " + ", ".join(clothing_options))
+        while True:
+            choice = input("Enter a clothing item (or 'done' to finish): ").lower()
     
     def pick_weapon(self, weapon):
         if weapon not in ["sword", "magic"]:
