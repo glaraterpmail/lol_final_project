@@ -1,9 +1,28 @@
 from argparse import ArgumentParser
+import re
 """An adventure game that helps a player practice Python concepts by providing 
 questions for players to answer in each round of the game to answer to beat the monsters."""
 
 class Character():
-    def __init__():
+    def __init__(self, name):
+        """Initializes a character and its features including name, health, money, attack 
+        damage, defense, weapons, and the starting round. 
+        
+        Attributes:
+        
+        Side effects:
+        - Creates and assigns values to the multiple attributes for the character.
+        """
+        # not finished regular expression
+        if not re.match(r""""(?x)^[[/a-zA-Z]* \d*\s*[/a-zA-Z]*\d*[/a-zA-Z]*]{1,30}$"gm""", name):
+            raise ValueError("Invalid character name. Must only contain letters and spaces, up to 30 characters.")
+        self.name = name
+        self.health = 100 
+        self.money = 50
+        self.round = 1
+        self.attack_damage = 0
+        self.defense = 0
+        self.weapon = None
     
     def __repr__():
 
