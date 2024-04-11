@@ -16,9 +16,25 @@ class Character():
             choice = input("Enter a clothing item (or 'done' to finish): ").lower()
     
     def pick_weapon(self, weapon):
+        """Pick a weapon for the character.
+
+        Args:
+            weapon (str): The weapon of choice (either "sword" or "magic").
+
+        Raises:
+            ValueError: If the provided weapon is not "sword" or "magic".
+            
+        Side effects:
+            - Updates `weapon`, `attack_dmg`, and `defense` attributes 
+            depending on the chosen weapon.
+            - Raises a ValueError if the weapon is not "sword" or "magic".
+        """
         if weapon not in ["sword", "magic"]:
-            raise ValueError(""Invalid weapon! Please choose either "sword" or /
-                             "magic"."")
+            raise ValueError("Invalid weapon! Please choose either 'sword' "
+                             "or 'magic'.")
+        self.weapon = weapon
+        self.attack_dmg = 25 if weapon == "sword" else 20
+        self.defense = 0.05 if weapon == "sword" else 0.10
 
 class Shop(Character):
     def __init__():
