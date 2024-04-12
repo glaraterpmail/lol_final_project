@@ -26,11 +26,3 @@ class Monsters():
 def game_master():
 
 def parse_args(arglist):
-    """ Parse command-line arguments.
-    """
-    parser = ArgumentParser()
-    parser.add_argument()
-    return parser.parse_args(arglist)
-
-if __name__ == "__main__":
-    args = parse_args(sys.argv[1:])
