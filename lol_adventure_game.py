@@ -52,14 +52,22 @@ class Character():
         return f"Hello {self.name}! you have {self.health}% health, and {self.money} coins to begin the game."
 
     def appearance(self):
-    """
-    Ask the user to customize the character's appearance.
+        """
+        Ask the user to customize the character's appearance.
 
-    Users can choose hair color, eye color, and clothing items.
-    Values will be stored in Character
-    Raises:
-        ValueError: If the user's input for hair or eye color is invalid.
-    """
+        
+                
+        Users can choose hair color, eye color, and clothing items.
+        Values will be stored in Character
+
+        Side Effects:
+            Creates attributes for hair_color, eye_color, clothing and assign values to them
+        
+        Raises:
+            ValueError: If the user's input for hair or eye color is invalid.
+            Prints out statement if clothing choice is invalid
+            Prints out character description to console
+        """
         clothing_options = ["hat", "shirt", "pants", "shoes"]
 
         #ask user for hair color
