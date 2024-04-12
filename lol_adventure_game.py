@@ -44,7 +44,7 @@ class Character():
             ValueError: If the provided weapon is not "sword" or "magic".
             
         Side effects:
-            - Updates `weapon`, `attack_dmg`, and `defense` attributes 
+            - Updates `weapon`, `attack_damage`, and `defense` attributes 
             depending on the chosen weapon.
             - Raises a ValueError if the weapon is not "sword" or "magic".
         """
@@ -52,7 +52,7 @@ class Character():
             raise ValueError("Invalid weapon! Please choose either 'sword' "
                              "or 'magic'.")
         self.weapon = weapon
-        self.attack_dmg = 25 if weapon == "sword" else 20
+        self.attack_damage = 25 if weapon == "sword" else 20
         self.defense = 0.05 if weapon == "sword" else 0.10
 
 class Shop(Character):
