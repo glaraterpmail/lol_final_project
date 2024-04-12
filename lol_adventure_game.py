@@ -18,6 +18,7 @@ class Character():
         weapon (str): The character's weapon.
         hair_color (str): The character's hair color.
         eye_color (str): The character's eye color.
+        clothing (list): The chacracter's clothing.
     """
     def __init__(self, name):
         """Initializes a character and its features including name, health, money, attack 
