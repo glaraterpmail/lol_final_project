@@ -25,7 +25,9 @@ class Character():
         self.weapon = None
     
     def __repr__():
-
+        return f"Hello {self.name}! you have {self.health}% health, /n
+         and {self.money} coins to begin the game."
+    
     def appearance():
         clothing_options = ["hat", "shirt", "pants", "shoes"]
         self.hair_color = input("Enter your hair color: ")
@@ -44,7 +46,7 @@ class Character():
             ValueError: If the provided weapon is not "sword" or "magic".
             
         Side effects:
-            - Updates `weapon`, `attack_damage`, and `defense` attributes 
+            - Updates `weapon`, `attack_dmg`, and `defense` attributes 
             depending on the chosen weapon.
             - Raises a ValueError if the weapon is not "sword" or "magic".
         """
@@ -52,7 +54,7 @@ class Character():
             raise ValueError("Invalid weapon! Please choose either 'sword' "
                              "or 'magic'.")
         self.weapon = weapon
-        self.attack_damage = 25 if weapon == "sword" else 20
+        self.attack_dmg = 25 if weapon == "sword" else 20
         self.defense = 0.05 if weapon == "sword" else 0.10
 
 class Shop(Character):
@@ -69,16 +71,19 @@ class Monsters():
 
 def game_master():
 
-<<<<<<< HEAD
-def parse_args(arglist):
-=======
 def parse_args(arglist):
     """ Parse command-line arguments.
     """
     parser = ArgumentParser()
-    parser.add_argument()
+    parser.add_argument("name", type=str, help="Name of the player")
+    parser.add_argument("--difficulty", choices=["easy", "medium", "hard"], default="medium", help="Difficulty level (optional)")
+    parser.add_argument("--weapon", choices=["sword", "magic"], help="Weapon choice (optional)")
+    parser.add_argument("--hair-color", type=str, help="Hair color choice (optional)")
+    parser.add_argument("--eye-color", type=str, help="Eye color choice (optional)")
+
     return parser.parse_args(arglist)
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
->>>>>>> 09c1be8b4ec76252b70ee81bddb7c6ec5bac48a4
+    main(args.name, difficulty=args.difficulty, weapon=args.weapon,
+         hair_color=args.hair_color, eye_color=args.eye_color)
