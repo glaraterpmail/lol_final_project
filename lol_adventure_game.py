@@ -1,9 +1,24 @@
 from argparse import ArgumentParser
 import re
 """An adventure game that helps a player practice Python concepts by providing 
-questions for players to answer in each round of the game to answer to beat the monsters."""
+questions for players to answer in each round of the game to answer to beat the 
+monsters."""
 
 class Character():
+    """A class representing a character of an adventure game.
+    
+    Attributes:
+        name (str): Name of the character.
+        health (int): Current health of the character.
+        money (int): Current moeny of the character.
+        round (int): The round the game is on.
+        attack_damage(int): How much damage the character deals.
+        defense (float): Chance in percentage that the character has to dodge
+            an attack if they answer incorrectly.
+        weapon (str): The character's weapon.
+        hair_color (str): The character's hair color.
+        eye_color (str): The character's eye color.
+    """
     def __init__(self, name):
         """Initializes a character and its features including name, health, money, attack 
         damage, defense, weapons, and the starting round. 
