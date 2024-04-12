@@ -50,7 +50,7 @@ class Character():
         """
         return f"Hello {self.name}! you have {self.health}% health, and {self.money} coins to begin the game."
 
-    def appearance():
+    def appearance(self):
     """
     Ask the user to customize the character's appearance.
 
