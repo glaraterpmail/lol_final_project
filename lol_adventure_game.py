@@ -10,7 +10,7 @@ class Character():
     Attributes:
         name (str): Name of the character.
         health (int): Current health of the character.
-        money (int): Current moeny of the character.
+        money (int): Current money of the character.
         round (int): The round the game is on.
         attack_damage(int): How much damage the character deals.
         defense (float): Chance in percentage that the character has to dodge
