@@ -54,8 +54,6 @@ class Character():
     def appearance(self):
         """
         Ask the user to customize the character's appearance.
-
-        
                 
         Users can choose hair color, eye color, and clothing items.
         Values will be stored in Character
