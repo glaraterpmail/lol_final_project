@@ -40,7 +40,7 @@ class Character():
         self.defense = 0
         self.weapon = None
     
-    def __repr__():
+    def __repr__(self):
         """Return a string representation of the Character object
 
         Returns:
