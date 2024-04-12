@@ -40,9 +40,16 @@ class Character():
         self.weapon = None
     
     def __repr__():
-        return f"Hello {self.name}! you have {self.health}% health, /n
-         and {self.money} coins to begin the game."
-    
+        """Return a string representation of the Character object
+
+        Returns:
+            str: A formatted string containing the character's name, health, and starting money
+
+        Side effects:
+            None
+        """
+        return f"Hello {self.name}! you have {self.health}% health, and {self.money} coins to begin the game."
+
     def appearance():
         clothing_options = ["hat", "shirt", "pants", "shoes"]
         self.hair_color = input("Enter your hair color: ")
@@ -88,17 +95,30 @@ def game_master():
 
 def parse_args(arglist):
     """ Parse command-line arguments.
+   
+    Args:
+        arglist (list): A list of command-line arguments to be parsed
+
+
+    Returns:
+        Namespace: An object containing the parsed arguments as attributes
+
+
     """
     parser = ArgumentParser()
     parser.add_argument("name", type=str, help="Name of the player")
-    parser.add_argument("--difficulty", choices=["easy", "medium", "hard"], default="medium", help="Difficulty level (optional)")
     parser.add_argument("--weapon", choices=["sword", "magic"], help="Weapon choice (optional)")
     parser.add_argument("--hair-color", type=str, help="Hair color choice (optional)")
     parser.add_argument("--eye-color", type=str, help="Eye color choice (optional)")
+
+    # more command-line arguments required eventually for the Shop() and Monsters() classes
 
     return parser.parse_args(arglist)
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-    main(args.name, difficulty=args.difficulty, weapon=args.weapon,
+
+    # to be worked on further as the game develops
+
+    main(args.name, weapon=args.weapon,
          hair_color=args.hair_color, eye_color=args.eye_color)
