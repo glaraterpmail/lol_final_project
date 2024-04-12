@@ -51,12 +51,35 @@ class Character():
         return f"Hello {self.name}! you have {self.health}% health, and {self.money} coins to begin the game."
 
     def appearance():
+    """
+    Ask the user to customize the character's appearance.
+
+    Users can choose hair color, eye color, and clothing items.
+    Values will be stored in Character
+    Raises:
+        ValueError: If the user's input for hair or eye color is invalid.
+    """
         clothing_options = ["hat", "shirt", "pants", "shoes"]
+
+        #ask user for hair color
         self.hair_color = input("Enter your hair color: ")
+
+        #ask user for eye color
         self.eye_color = input("Enter your eye color: ")
+
+        #ask user for clothing items
         print("Available clothing options: " + ", ".join(clothing_options))
         while True:
             choice = input("Enter a clothing item (or 'done' to finish): ").lower()
+            if choice == "done":
+                break
+            elif choice in clothing_options:
+                self.clothing.append(choice)
+            else:
+                print("Invalid choice. Please try again.")
+
+        #print character description
+        print(f"\nYour character's appearance:\nName: {self.name}\nHair Color: {self.hair_color}\nEye Color: {self.eye_color}\nClothing: {', '.join(self.clothing)}")
     
     def pick_weapon(self, weapon):
         """Pick a weapon for the character.
