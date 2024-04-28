@@ -38,6 +38,10 @@ class Character():
         self.attack_damage = 0
         self.defense = 0
         self.weapon = None
+        self.hair_color = None
+        self.eye_color = None
+        self.clothing = []
+        self.shop = None # attribute to hold ref to shop
     
     def __repr__(self):
         """Return a string representation of the Character object
@@ -109,9 +113,26 @@ class Character():
         self.defense = 0.05 if weapon == "sword" else 0.10
 
 class Shop(Character):
-    def __init__():
+    """A subclass representing a shop where players can buy items."""
+    def __init__(self,name):
+        """Initializes the shop.
+
+        Args:
+            name (str): The name of the shop.
+
+        Side effects:
+            Initializes shop attributes.
+        """
+        super().__init__(name)
+        self.items = {"health potion": 10} 
+        self.health_potion_count = 3  
 
     def open_shop():
+        """Displays a list of available items and their prices."""
+        print("Welcome to the shop!")
+        print("Available items:")
+        for item, price in self.items.items():
+            print(f"{item}: {price} coins")
     
     def buy_item():
 
@@ -139,6 +160,7 @@ def parse_args(arglist):
     parser.add_argument("--weapon", choices=["sword", "magic"], help="Weapon choice (optional)")
     parser.add_argument("--hair-color", type=str, help="Hair color choice (optional)")
     parser.add_argument("--eye-color", type=str, help="Eye color choice (optional)")
+    parser.add_argument("--shop", action="store_true", help="Interact with the shop")
 
     # more command-line arguments required eventually for the Shop() and Monsters() classes
 
