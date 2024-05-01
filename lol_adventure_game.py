@@ -149,8 +149,8 @@ class Shop(Character):
 
 
 class Monsters():
-    def __init__():
-    
+    def __init__(self, monsters):
+        self.monsters = monsters
     def questions():
 
 def game_master():
