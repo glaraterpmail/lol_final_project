@@ -135,6 +135,18 @@ class Shop(Character):
             print(f"{item}: {price} coins")
     
     def buy_item():
+        """Buy an item from the shop."""
+        cost = self.items.get(item)
+
+        if cost is None:
+            print(f"'{item}' is not a valid item.")
+            return cost
+            
+        if super().money >= cost:
+        
+        if item == "health potion" and self.health_potion_count == 0:
+            print("You have reached the health potion limit.")
+
 
 class Monsters():
     def __init__():
