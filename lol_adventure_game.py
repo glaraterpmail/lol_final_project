@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 import re
+import random
 """An adventure game that helps a player practice Python concepts by providing 
 questions for players to answer in each round of the game to answer to beat the 
 monsters."""
@@ -149,9 +150,17 @@ class Shop(Character):
 
 
 class Monsters():
-    def __init__(self, monsters):
+    def __init__(self, round, monsters):
+        self.round = round
         self.monsters = monsters
+        self.default_money = 0
+        self.monster_dmg = 10 + (round - 1) * 5
     def questions():
+        questions_file = f"{[round].lower()}.questions.txt"
+        with open(questions_file, 'r') as file:
+            questions = file.readlines()
+            random_question = random.choice(questions).strip()
+        return monsters[self.round], random_question
 
 def game_master():
 
