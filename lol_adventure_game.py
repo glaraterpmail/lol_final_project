@@ -128,14 +128,14 @@ class Shop(Character):
         self.items = {"health potion": 10} 
         self.health_potion_count = 3  
 
-    def open_shop():
+    def open_shop(self):
         """Displays a list of available items and their prices."""
         print("Welcome to the shop!")
         print("Available items:")
         for item, price in self.items.items():
             print(f"{item}: {price} coins")
     
-    def buy_item():
+    def buy_item(self, item):
         """Buy an item from the shop."""
         cost = self.items.get(item)
 
