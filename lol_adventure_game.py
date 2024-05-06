@@ -145,8 +145,8 @@ class Shop(Character):
             
         if super().money >= cost:
         
-        if item == "health potion" and self.health_potion_count == 0:
-            print("You have reached the health potion limit.")
+            if item == "health potion" and self.health_potion_count == 0:
+                print("You have reached the health potion limit.")
 
 
 class Monsters():
