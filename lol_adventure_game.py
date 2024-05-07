@@ -203,7 +203,8 @@ class Monsters():
 def game_master():
     """Run the adventure game."""
     # Welcome message and character creation
-    print("Welcome to the Adventure Game!")
+    print("Welcome to the Python Adventure Game! Your goal is to save the 326 Village from monster attacks.")
+    print("Let's begin!")
     character_name = input("Enter your character's name: ")
     player = Character(character_name)
     player.appearance()
@@ -247,6 +248,9 @@ def game_master():
                 player.health -= current_monster.monster_dmg
                 print(f"Incorrect answer! Your current health is {player.health}. Please try again.")
 
+        if round_num == 5:
+            break
+        
         # Offer a visit to the shop
         visit_shop = input("Would you like to visit the shop? (yes/no): ").lower()
         if visit_shop == "yes":
@@ -262,12 +266,9 @@ def game_master():
             print("Game Over! You have been defeated!")
             return
 
-        if round_num == 5:
-            break
-
         print(f"End of Round {round_num}. Your current stats: Health - {player.health}%, Money - {player.money} coins")
     
-    print("Congratulations! You have completed all rounds of the game!")
+    print("Congratulations! You have saved the village!")
 
 def parse_args(arglist):
     """ Parse command-line arguments.
