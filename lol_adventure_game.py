@@ -235,7 +235,6 @@ def game_master():
         print("Answer the following question to defeat it:")
         print(q_and_a_key)
         answers = question_dict[q_and_a_key]
-        print(answers)
 
         # Player answer
         while True:
