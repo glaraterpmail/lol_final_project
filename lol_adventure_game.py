@@ -164,23 +164,20 @@ class Monsters():
                 tuple: contains the monster for the round and a dictionary with a randomly-chosen
                     question and its answer. 
     """
-    def __init__(self, round, monsters):
+    def __init__(self, round):
         """Initialize Monsters with round number and monster dictionary.
 
         Args:
             round (int): The current round of monster and question encounters for the game.
-            monsters (dictionary): A list of monsters for the current round. 
         """
         self.round = round
-        self.monsters = monsters
-        self.default_money = 0
+        self.default_money = 10 + (round - 1) * 5
         self.monster_dmg = 10 + (round - 1) * 5
     def questions(self):
         """Retrieve a random question-answer pair from a file corresponding to the round.
 
         Returns:
-            tuple: contains monsters for the round and a dictionary with a randomly chosen
-                question and answer pair. 
+            dict: A dictionary containing a randomly chosen question and its answer. 
         """
         questions_file = f"{self.round}_questions.txt"
         qa_dict = {}
@@ -188,12 +185,17 @@ class Monsters():
             lines = file.readlines()
             # Process each line (question-answer pair)
             for line in lines:
-                if line.strip():
-                    question, answers = line.strip().split(':')
-                    answer_list = [ans.strip() for ans in answers.split('-')]
-                    qa_dict[question.strip()] = answer_list
+                split_line = line.strip().split('-')
+                answers = []
+                for indx in range(len(split_line)):
+                    if "Question" in split_line[indx]:
+                        q = split_line[indx]
+                    else:
+                        answers.append(split_line[indx])
+                qa_dict[q] = answers
         random_question = random.choice(list(qa_dict.keys()))
-        return self.monsters[self.round], {random_question: qa_dict[random_question]}
+        print("qa_dict:", qa_dict)
+        return {random_question: qa_dict[random_question]}
 
 def game_master():
 
