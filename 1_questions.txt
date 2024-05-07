@@ -1,0 +1,7 @@
+Add the value “goblin” to an instance of mutable data types in Python. If a key/value pair is necessary, use the key “attack”:
+- mylist.append(“goblin”)
+- mylist.add(“goblin”)
+- mydict[“attack”] = goblin
+Suppose we have a dictionary called groceries. Write an expression to obtain the value of the key “carrots”.
+- groceries[“carrots”]
+- groceries.get(“carrots”)
