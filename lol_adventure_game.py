@@ -150,12 +150,38 @@ class Shop(Character):
 
 
 class Monsters():
+    """ Represents rounds of monsters and questions that the user must face.
+
+    Attributes:
+        round (int): The current round of the game.
+        monsters (dict): A dictionary of monsters and questions for the current round.
+        default_money (int): The default amount of money awarded for finishing the round.
+        monster_dmg (int): The base damage inflicted by the monster and answering incorrectly.
+
+    Methods:
+        questions: Retrieve a random question-answer pair from a file for the round.
+            Returns:
+                tuple: contains the monster for the round and a dictionary with a randomly-chosen
+                    question and its answer. 
+    """
     def __init__(self, round, monsters):
+        """Initialize Monsters with round number and monster dictionary.
+
+        Args:
+            round (int): The current round of monster and question encounters for the game.
+            monsters (dictionary): A list of monsters for the current round. 
+        """
         self.round = round
         self.monsters = monsters
         self.default_money = 0
         self.monster_dmg = 10 + (round - 1) * 5
     def questions(self):
+        """Retrieve a random question-answer pair from a file corresponding to the round.
+
+        Returns:
+            tuple: contains monsters for the round and a dictionary with a randomly chosen
+                question and answer pair. 
+        """
         questions_file = f"{self.round}_questions.txt"
         qa_dict = {}
         with open(questions_file, 'r') as file:
