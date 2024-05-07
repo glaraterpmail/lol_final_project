@@ -155,12 +155,19 @@ class Monsters():
         self.monsters = monsters
         self.default_money = 0
         self.monster_dmg = 10 + (round - 1) * 5
-    def questions():
-        questions_file = f"{[round].lower()}.questions.txt"
+    def questions(self):
+        questions_file = f"{self.round}_questions.txt"
+        qa_dict = {}
         with open(questions_file, 'r') as file:
-            questions = file.readlines()
-            random_question = random.choice(questions).strip()
-        return monsters[self.round], random_question
+            lines = file.readlines()
+            # Process each line (question-answer pair)
+            for line in lines:
+                if line.strip():
+                    question, answers = line.strip().split(':')
+                    answer_list = [ans.strip() for ans in answers.split('-')]
+                    qa_dict[question.strip()] = answer_list
+        random_question = random.choice(list(qa_dict.keys()))
+        return self.monsters[self.round], {random_question: qa_dict[random_question]}
 
 def game_master():
 
