@@ -6,6 +6,8 @@ from argparse import ArgumentParser
 import re
 import random
 
+MONSTERS_LIST = ["goblin", "vampire", "werewolf", "dark elf", "ghoul"]
+
 class Character():
     """A class representing a character of an adventure game.
     
