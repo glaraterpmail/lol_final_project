@@ -30,7 +30,7 @@ class Character():
         Side effects:
         - Creates and assigns values to the multiple attributes for the character.
         """
-        if not re.match(r""""(?x)^[[/a-zA-Z]* \d*\s*[/a-zA-Z]*\d*[/a-zA-Z]*]{1,30}$"gm""", name):
+        if not re.match(r"^[a-zA-Z\s']{1,30}$", name):
             raise ValueError("Invalid character name. Must only contain letters and spaces, up to 30 characters.")
         self.name = name
         self.health = 100 
