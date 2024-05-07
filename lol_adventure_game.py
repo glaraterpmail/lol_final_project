@@ -1,9 +1,10 @@
-from argparse import ArgumentParser
-import re
-import random
 """An adventure game that helps a player practice Python concepts by providing 
 questions for players to answer in each round of the game to answer to beat the 
 monsters."""
+
+from argparse import ArgumentParser
+import re
+import random
 
 class Character():
     """A class representing a character of an adventure game.
@@ -198,6 +199,74 @@ class Monsters():
         return {random_question: qa_dict[random_question]}
 
 def game_master():
+    """Run the adventure game."""
+    # Welcome message and character creation
+    print("Welcome to the Adventure Game!")
+    character_name = input("Enter your character's name: ")
+    player = Character(character_name)
+    player.appearance()
+
+    # Weapon selection
+    while True:
+        weapon_choice = input("Choose your weapon (sword or magic): ").lower()
+        try:
+            player.pick_weapon(weapon_choice)
+            break
+        except ValueError as error:
+            print(error)
+
+    # Create shop
+    shop = Shop("Enchanted Marketplace")
+
+    # Rounds
+    available = set(MONSTERS_LIST)
+    for round_num in range(1, 6):
+        print("\n--------------------------------------------------------")
+        print(f"Round {round_num} - Fight!")
+        monster = available.pop()
+        current_monster = Monsters(round_num)
+        question_dict = current_monster.questions()
+
+        # Display monster and question
+        q_and_a_key = list(question_dict.keys())[0]
+        print(f"You encounter a {monster}!")
+        print("Answer the following question to defeat it:")
+        print(q_and_a_key)
+        answers = question_dict[q_and_a_key]
+        print(answers)
+
+        # Player answer
+        while True:
+            player_answer = input("Your answer: ")
+            if player_answer in answers:
+                print("Correct! You defeated the monster!")
+                player.money += current_monster.default_money
+                break
+            else:
+                player.health -= current_monster.monster_dmg
+                print(f"Incorrect answer! Your current health is {player.health}. Please try again.")
+
+        # Offer a visit to the shop
+        visit_shop = input("Would you like to visit the shop? (yes/no): ").lower()
+        if visit_shop == "yes":
+            shop.open_shop()
+            while True:
+                buy_item = input("What would you like to buy? (type 'done' to exit): ").lower()
+                if buy_item == "done":
+                    break
+                else:
+                    shop.buy_item(buy_item)
+
+        if player.health <= 0:
+            print("Game Over! You have been defeated!")
+            return
+
+        if round_num == 5:
+            break
+
+        print(f"End of Round {round_num}. Your current stats: Health - {player.health}%, Money - {player.money} coins")
+    
+    print("Congratulations! You have completed all rounds of the game!")
 
 def parse_args(arglist):
     """ Parse command-line arguments.

@@ -1,2 +1,1 @@
-Write an expression calling the method “attack_goblin()” from the parent class and return the result
-- return super().attack_goblin()
+Question: Write an expression calling the method “attack_goblin()” from the parent class and return the result. -return super().attack_goblin()
