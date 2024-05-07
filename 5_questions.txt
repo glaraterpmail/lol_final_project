@@ -1,0 +1,2 @@
+Assume pandas has been imported as pd. Write a singular statement reading the contents of the file “gobin.csv” into a Pandas DataFrame and store it in a variable named “df”
+- df = pd.read_csv(“goblin.csv”)

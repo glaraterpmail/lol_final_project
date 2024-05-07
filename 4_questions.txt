@@ -1,0 +1,10 @@
+Name a unary operator
+- __pos__
+- __invert__
+- __neg__
+- __abs__
+- __invert__
+- __round__
+- __floor__
+- __ceil__
+- __trunc__

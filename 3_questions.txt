@@ -1,0 +1,2 @@
+Make a capturing group named “goblin” to match the letter G
+- (?P<goblin>G)
