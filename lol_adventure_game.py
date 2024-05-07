@@ -268,6 +268,8 @@ def game_master():
         print(f"End of Round {round_num}. Your current stats: Health - {player.health}%, Money - {player.money} coins")
     
     print("Congratulations! You have saved the village!")
+    
+game_master()
 
 def parse_args(arglist):
     """ Parse command-line arguments.
