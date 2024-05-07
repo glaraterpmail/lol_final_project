@@ -197,7 +197,6 @@ class Monsters():
                         answers.append(split_line[indx])
                 qa_dict[q] = answers
         random_question = random.choice(list(qa_dict.keys()))
-        print("qa_dict:", qa_dict)
         return {random_question: qa_dict[random_question]}
 
 def game_master():
