@@ -248,9 +248,11 @@ def game_master():
                 break
             else:
                 player.health -= current_monster.monster_dmg
+                if player.health <= 0:
+                    break
                 print(f"Incorrect answer! Your current health is {player.health}. Please try again.")
 
-        if round_num == 5:
+        if round_num == 5 or player.health <= 0:
             break
         
         # Offer a visit to the shop
@@ -264,13 +266,12 @@ def game_master():
                 else:
                     shop.buy_item(buy_item)
 
-        if player.health <= 0:
-            print("Game Over! You have been defeated!")
-            return
-
         print(f"End of Round {round_num}. Your current stats: Health - {player.health}%, Money - {player.money} coins")
     
-    print("Congratulations! You have saved the village!")
+    if player.health <= 0:
+        print("Game Over! You have been defeated!")
+    else:
+        print("Congratulations! You have saved the village!")
     
 game_master()
 
