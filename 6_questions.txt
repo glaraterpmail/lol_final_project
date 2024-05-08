@@ -1,1 +1,1 @@
-Name a magic method used for operator overloading in Python classes. -__add__-__mul__-__truediv__
+Question: Name a magic method used for operator overloading in Python classes. -__add__-__mul__-__truediv__
