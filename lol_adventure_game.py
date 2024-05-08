@@ -129,7 +129,7 @@ class Shop(Character):
             Initializes shop attributes.
         """
         super().__init__(name)
-        self.items = {"health potion": 10} 
+        self.items = {"health potion": 30} 
         self.health_potion_count = 3  
 
     def open_shop(self):
