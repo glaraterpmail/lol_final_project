@@ -152,7 +152,7 @@ class Shop(Character):
                 print("You have reached the health potion limit.")
             else:
                 self.money -= cost
-                print(f"You bought '{item}' for {cost) coins.")
+                print(f"You bought '{item}' for {cost} coins.")
                 print(f"Remaining coins: {self.money}")
 
 class Monsters():
