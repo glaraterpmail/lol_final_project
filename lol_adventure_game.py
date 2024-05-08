@@ -202,7 +202,14 @@ class Monsters():
         return {random_question: qa_dict[random_question]}
 
 def game_master():
-    """Run the adventure game."""
+    """Run the adventure game.
+    
+    Raises:
+        ValueError: If the provided weapon is not "sword" or "magic".
+    
+    Side effects:
+        - Prints the game to console.
+    """
     # Welcome message and character creation
     print("Welcome to the Python Adventure Game! Your goal is to save the 326 Village from monster attacks.")
     print("Let's begin!")
