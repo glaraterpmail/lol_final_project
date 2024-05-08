@@ -46,7 +46,6 @@ class Character():
         self.hair_color = None
         self.eye_color = None
         self.clothing = []
-        self.shop = None # attribute to hold ref to shop
     
     def __repr__(self):
         """Return a string representation of the Character object
