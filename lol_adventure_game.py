@@ -285,7 +285,7 @@ def parse_args(arglist):
         Namespace: An object containing the parsed arguments as attributes
     """
     parser = ArgumentParser(description="Python Adventure Game")
-    parser.add_argument("name", type=str, help="Name of the player")
+    parser.add_argument("--name", type=str, help="Name of the player")
     parser.add_argument("--weapon", choices=["sword", "magic"], help="Weapon choice (optional)")
     parser.add_argument("--hair-color", type=str, help="Hair color choice (optional)")
     parser.add_argument("--eye-color", type=str, help="Eye color choice (optional)")
