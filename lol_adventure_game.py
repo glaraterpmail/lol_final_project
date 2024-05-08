@@ -5,6 +5,7 @@ monsters."""
 from argparse import ArgumentParser
 import re
 import random
+import sys
 
 MONSTERS_LIST = ["goblin", "vampire", "werewolf", "dark elf", "ghoul"]
 
@@ -128,7 +129,7 @@ class Shop(Character):
             Initializes shop attributes.
         """
         super().__init__(name)
-        self.items = {"health potion": 10} 
+        self.items = {"health potion": 30} 
         self.health_potion_count = 3  
 
     def open_shop(self):
@@ -146,11 +147,13 @@ class Shop(Character):
             print(f"'{item}' is not a valid item.")
             return cost
             
-        if super().money >= cost:
-        
+        if self.money >= cost:
             if item == "health potion" and self.health_potion_count == 0:
                 print("You have reached the health potion limit.")
-
+            else:
+                self.money -= cost
+                print(f"You bought '{item}' for {cost} coins.")
+                print(f"Remaining coins: {self.money}")
 
 class Monsters():
     """ Represents rounds of monsters and questions that the user must face.
@@ -245,9 +248,11 @@ def game_master():
                 break
             else:
                 player.health -= current_monster.monster_dmg
+                if player.health <= 0:
+                    break
                 print(f"Incorrect answer! Your current health is {player.health}. Please try again.")
 
-        if round_num == 5:
+        if round_num == 5 or player.health <= 0:
             break
         
         # Offer a visit to the shop
@@ -261,13 +266,12 @@ def game_master():
                 else:
                     shop.buy_item(buy_item)
 
-        if player.health <= 0:
-            print("Game Over! You have been defeated!")
-            return
-
         print(f"End of Round {round_num}. Your current stats: Health - {player.health}%, Money - {player.money} coins")
     
-    print("Congratulations! You have saved the village!")
+    if player.health <= 0:
+        print("Game Over! You have been defeated!")
+    else:
+        print("Congratulations! You have saved the village!")
     
 game_master()
 
