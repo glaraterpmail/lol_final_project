@@ -277,27 +277,18 @@ def parse_args(arglist):
     Args:
         arglist (list): A list of command-line arguments to be parsed
 
-
     Returns:
         Namespace: An object containing the parsed arguments as attributes
-
-
     """
-    parser = ArgumentParser()
+    parser = ArgumentParser(description="Python Adventure Game")
     parser.add_argument("name", type=str, help="Name of the player")
     parser.add_argument("--weapon", choices=["sword", "magic"], help="Weapon choice (optional)")
     parser.add_argument("--hair-color", type=str, help="Hair color choice (optional)")
     parser.add_argument("--eye-color", type=str, help="Eye color choice (optional)")
     parser.add_argument("--shop", action="store_true", help="Interact with the shop")
-
-    # more command-line arguments required eventually for the Shop() and Monsters() classes
+    parser.add_argument("--rounds", type=int, default=5, help="Number of rounds for the game (default: 5)")
 
     return parser.parse_args(arglist)
 
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
-
-    # to be worked on further as the game develops
-
-    main(args.name, weapon=args.weapon,
-         hair_color=args.hair_color, eye_color=args.eye_color)
