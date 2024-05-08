@@ -260,6 +260,7 @@ def game_master():
         if visit_shop == "yes":
             shop.open_shop()
             while True:
+                print(f"Current coins: {player.money}")
                 buy_item = input("What would you like to buy? (type 'done' to exit): ").lower()
                 if buy_item == "done":
                     break
