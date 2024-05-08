@@ -146,10 +146,14 @@ class Shop(Character):
             print(f"'{item}' is not a valid item.")
             return cost
             
-        if super().money >= cost:
-        
+        if self.money >= cost:
             if item == "health potion" and self.health_potion_count == 0:
                 print("You have reached the health potion limit.")
+            else:
+                self.money -= cost
+                print(f"You bought '{item}' for {cost) coins.")
+                print(f"Remaining coins: {self.money}")
+                
 
 
 class Monsters():
