@@ -5,6 +5,7 @@ monsters."""
 from argparse import ArgumentParser
 import re
 import random
+import sys
 
 MONSTERS_LIST = ["goblin", "vampire", "werewolf", "dark elf", "ghoul"]
 
@@ -153,8 +154,6 @@ class Shop(Character):
                 self.money -= cost
                 print(f"You bought '{item}' for {cost) coins.")
                 print(f"Remaining coins: {self.money}")
-                
-
 
 class Monsters():
     """ Represents rounds of monsters and questions that the user must face.
