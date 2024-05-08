@@ -1,1 +1,2 @@
-Questions: Name a magic method that can be used to define a unary operator. -__pos__-__invert__-__neg__-__abs__-__invert__-__round__-__floor__-__ceil__-__trunc__
+Question: Name a magic method that can be used to define a unary operator. -__pos__-__invert__-__neg__-__abs__-__invert__-__round__-__floor__-__ceil__-__trunc__
+Question: Write a formal representation of self.attack. Assume the __repr__ method has already been defined. -return f”(Attack{self.attack})”
