@@ -165,9 +165,10 @@ class Monsters():
 
     Methods:
         questions: Retrieve a random question-answer pair from a file for the round.
-            Returns:
-                tuple: contains the monster for the round and a dictionary with a randomly-chosen
-                    question and its answer. 
+            
+    Returns:
+        tuple: contains the monster for the round and a dictionary with a randomly-chosen
+            question and its answer. 
     """
     def __init__(self, round):
         """Initialize Monsters with round number and monster dictionary.
