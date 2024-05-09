@@ -1,3 +1,5 @@
 Question: Write an expression to obtain an item in the third position of a list called "pets". -pets[2]
 Question: Write an expression adding the value “goblin” to a key called "attack" in dictionay "mydict". -mydict[“attack”] = goblin-mydict.update({"attack": "goblin"})
 Question: Suppose we have a dictionary called groceries. Write an expression to obtain the value of the key “carrots”. -groceries[“carrots”]-groceries.get(“carrots”)
+Question: Write an expression combining two sets called "set1" and "set2". -set1 | set2-set2 | set1-set1.union(set2)-set2.union(set1)
+Question: Write an expression creating an empty tuple. -()-tuple()

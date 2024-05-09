@@ -1,2 +1,2 @@
 Question: Write an expression calling the method “attack_goblin()” from the parent class and return the result. -return super().attack_goblin()
-Question: If I were to inherit the __init__() method in a subclass, what would be written to inherit it from the parent class? -N/A -Nothing -nothing
+Question: If I were to inherit the __init__() method in a subclass, what would be written to inherit it from the parent class? -N/A-Nothing-nothing
