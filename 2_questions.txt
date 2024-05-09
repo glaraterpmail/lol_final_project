@@ -2,4 +2,4 @@ Question: Write an expression calling the method “attack_goblin()” from the 
 Question: If I were to inherit the __init__() method in a subclass, what would be written to inherit it from the parent class? -N/A-Nothing-nothing
 Question: True or False: Composition allows for code reuse by combining existing classes without modifying them. -True-T-true
 Question: Given stu as an object of the Student class, write an expression passing stu into a Classroon class. -Classroom(stu)
-Question: If Pizza is a parent class, how would you create a child class of Pizza called Toppings -class Toppings(Pizza)-class Toppings(Pizza):
+Question: If Pizza is a parent class, how would you create a child class of Pizza called Toppings. -class Toppings(Pizza)-class Toppings(Pizza):

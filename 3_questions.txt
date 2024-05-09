@@ -1,1 +1,5 @@
 Question: Make a capturing group named “goblin” to match the letter G. -(?P<goblin>G)
+Question: What character is used to represent "zero or more occurrences" of a character in a regular expression? -*-"*"
+Question: Fill in the blank: In a regular expression, the metacharacter \d is used to match a __________. -digit-"digit"
+Question: What function in the re module is used to find all occurrences of a pattern in a string? -findall-re.findall()-re.findall
+Question: Given the variables pattern = r'hello' and text = "Hello, world!", write an expression using re.search to find the pattern in the text. -re.search(pattern, text)
