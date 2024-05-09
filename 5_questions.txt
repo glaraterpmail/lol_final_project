@@ -1,3 +1,5 @@
 Question: Assume pandas has been imported as pd. Write a singular statement reading the contents of the file “goblin.csv” into a Pandas DataFrame and store it in a variable named “df”. -df = pd.read_csv(“goblin.csv”)
 Question: Write a statement importing pandas as pd. -import pandas as pd
 Question: Put the boolean series "df["LAH]" in the index operator of the dataframe df. -df[df["LAH"]]
+Question: Which of the following data structures is not provided by pandas? a) Series b) DataFrame c) Array -array-Array
+Question: In pandas, how is missing data represented? Hint: It stands for "Not a Number". -NaN
